@@ -1,0 +1,388 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300");
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i,
+center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Customize
+ * ========================================================================== */
+html, body {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+/* OFTEN USED
+ *------------------------------- */
+#browser {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.browser_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 260px;
+  margin-left: -250px;
+  margin-top: -130px;
+  padding: 40px;
+  margin: -170px 0 0 -290px;
+  background: #FFF;
+  border-radius: 5px;
+  text-align: center;
+}
+.browser_content h1 {
+  margin-bottom: 20px;
+}
+.browser_content p {
+  margin-top: 30px;
+}
+
+.browser_note {
+  color: #666;
+  line-height: 1.7;
+  padding: 0 20px;
+}
+.browser_note .autoWrap {
+  display: inline-block;
+}
+
+.browser_chosen {
+  position: relative;
+  width: 480px;
+  margin: 20px auto 0;
+  overflow: hidden;
+}
+.browser_chosen a {
+  float: left;
+  margin: 0 28px 20px;
+  color: #666;
+  line-height: 1.7;
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 599px) {
+  .browser_content {
+    width: 100%;
+    height: auto;
+    padding: 40px 0 0;
+    margin: -235px 0 0 -50%;
+    border-radius: 0;
+  }
+
+  .browser_chosen {
+    width: 240px;
+  }
+}
+/* Set style
+ * ========================================================================== */
+#about {
+  position: relative;
+  margin: 10vh auto 0;
+  display: block;
+}
+
+.article {
+  position: relative;
+  text-align: center;
+  padding: 10vh 0 20vh;
+}
+.article .title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.article .title-tw {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 20px;
+}
+.article .cont {
+  font-size: 1rem;
+  line-height: 2;
+  word-wrap: break-word;
+}
+
+.scrollline {
+  position: absolute;
+  background: #000;
+  width: 1px;
+  height: 50px;
+  left: 50%;
+  margin: 30px 0;
+  animation: mymove 2s infinite;
+  -webkit-animation: mymove 2s infinite;
+}
+@keyframes mymove {
+  0% {
+    height: 0px;
+    margin: 30px 0 10px;
+  }
+  50% {
+    height: 50px;
+    margin: 30px 0;
+  }
+  100% {
+    height: 0px;
+    margin: 80px 0 20px;
+  }
+}
+@-webkit-keyframes mymove /*Safari and Chome*/ {
+  0% {
+    height: 0px;
+    margin: 30px 0 10px;
+  }
+  50% {
+    height: 50px;
+    margin: 30px 0;
+  }
+  100% {
+    height: 0px;
+    margin: 80px 0 20px;
+  }
+}
+.character {
+  position: relative;
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto 5%;
+  overflow: hidden;
+}
+.character .mask {
+  position: relative;
+  width: 45%;
+  overflow: hidden;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.character .cont {
+  width: 50%;
+  margin-left: 5%;
+}
+.character .cont .title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+.character .cont .title span {
+  font-size: 1.5rem;
+}
+.character .cont .text {
+  font-size: 1rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+.character .cont .text span {
+  font-size: 0.9rem;
+}
+.character:nth-child(2) {
+  flex-direction: row-reverse;
+}
+.character:nth-child(2) .cont {
+  margin-right: 5%;
+  margin-left: 0%;
+}
+
+.dust {
+  position: relative;
+  background-image: url(../images/about/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 40vh;
+}
+
+.fa-heart {
+  position: relative;
+  font-size: 1rem;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.conclusion {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 5% 0;
+  word-wrap: break-word;
+}
+.conclusion .line {
+  position: relative;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 20px;
+  max-width: 250px;
+  height: 1px;
+  background: #999;
+}
+
+/*------------------------------------------
+ *                 action
+ *------------------------------------------ */
+.imgHoverR {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: #efefef;
+  -moz-transition: right 1s;
+  -o-transition: right 1s;
+  -webkit-transition: right 1s;
+  transition: right 1s;
+}
+
+.imgShowR {
+  right: 100%;
+  -moz-transition: right 1s;
+  -o-transition: right 1s;
+  -webkit-transition: right 1s;
+  transition: right 1s;
+}
+
+.imgHoverL {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: #efefef;
+  -moz-transition: left 1s;
+  -o-transition: left 1s;
+  -webkit-transition: left 1s;
+  transition: left 1s;
+}
+
+.imgShowL {
+  left: 100%;
+  -moz-transition: left 1s;
+  -o-transition: left 1s;
+  -webkit-transition: left 1s;
+  transition: left 1s;
+}
+
+/*------------------------------------------
+ *             tablet 、 Mobile
+ *------------------------------------------ */
+@media only screen and (max-width: 950px) {
+  #about {
+    margin: 10vh 5% 0;
+  }
+
+  .character {
+    max-width: none;
+    margin: 0 auto 10%;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .article {
+    padding: 15vh 0;
+  }
+  .article .title {
+    font-size: 2rem;
+  }
+  .article .cont {
+    font-size: 1rem;
+  }
+
+  .character {
+    display: block;
+    margin: 0 auto 20%;
+  }
+  .character .mask {
+    width: 100%;
+  }
+  .character .cont {
+    width: 100%;
+    margin-left: 0%;
+    margin-top: 10%;
+  }
+  .character .cont .title {
+    font-size: 1.5rem;
+  }
+  .character .cont .title span {
+    font-size: 0.9rem;
+  }
+  .character .cont .text {
+    font-size: 1rem;
+  }
+  .character .cont .text span {
+    font-size: 0.9rem;
+  }
+  .character:nth-child(2) .cont {
+    margin-right: 0%;
+  }
+
+  .dust {
+    background-position: top;
+    height: 40vh;
+  }
+
+  .conclusion {
+    font-size: 1rem;
+  }
+}

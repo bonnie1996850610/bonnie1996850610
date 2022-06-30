@@ -1,0 +1,924 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300");
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i,
+center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Customize
+ * ========================================================================== */
+html, body {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+/* OFTEN USED
+ *------------------------------- */
+#browser {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.browser_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 260px;
+  margin-left: -250px;
+  margin-top: -130px;
+  padding: 40px;
+  margin: -170px 0 0 -290px;
+  background: #FFF;
+  border-radius: 5px;
+  text-align: center;
+}
+.browser_content h1 {
+  margin-bottom: 20px;
+}
+.browser_content p {
+  margin-top: 30px;
+}
+
+.browser_note {
+  color: #666;
+  line-height: 1.7;
+  padding: 0 20px;
+}
+.browser_note .autoWrap {
+  display: inline-block;
+}
+
+.browser_chosen {
+  position: relative;
+  width: 480px;
+  margin: 20px auto 0;
+  overflow: hidden;
+}
+.browser_chosen a {
+  float: left;
+  margin: 0 28px 20px;
+  color: #666;
+  line-height: 1.7;
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 599px) {
+  .browser_content {
+    width: 100%;
+    height: auto;
+    padding: 40px 0 0;
+    margin: -235px 0 0 -50%;
+    border-radius: 0;
+  }
+
+  .browser_chosen {
+    width: 240px;
+  }
+}
+/* Set style
+ * ========================================================================== */
+.top-pic {
+  background-image: url("../images/index/bg1.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-attachment: fixed;
+  position: relative;
+  top: 0px;
+  height: 75vh;
+}
+.top-txt {
+  position: absolute;
+  top: 400px;
+  left: 160px;
+  z-index: 2;
+}
+.top-txt span {
+  font-size: 8vw;
+  width: 100%;
+  display: block;
+}
+.top-txt .back {
+  margin-left: 50%;
+}
+.top-txt .small {
+  font-size: 3vw;
+  margin-top: 35px;
+}
+.top-white {
+  position: absolute;
+  background: #fff;
+  width: 20vw;
+  height: 900px;
+  top: 0;
+}
+
+/*============ ABOUT ============ */
+.about {
+  position: relative;
+}
+.about-inner {
+  position: relative;
+  margin: 200px auto 0;
+  width: 80%;
+  display: flex;
+  padding-top: 50px;
+}
+.about-pic {
+  background-image: url("../images/index/bg2.jpg");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-attachment: fixed;
+  background-size: contain;
+  position: relative;
+  height: 50vh;
+  width: 32vw;
+}
+.about-txt {
+  position: relative;
+  margin: 50px 0 0 50px;
+}
+.about .txt-stitle {
+  position: relative;
+  font-size: 1rem;
+  color: #999;
+  margin-bottom: 20px;
+}
+.about .txt-stitle:before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: -120px;
+  width: 100px;
+  text-align: center;
+  height: 1px;
+  background: #ccc;
+}
+.about .txt-btitle {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+.about .txt-cont {
+  font-size: 0.9rem;
+  color: #555;
+  max-width: 450px;
+  line-height: 1.7;
+}
+
+/*============ LOCATION ============ */
+.location {
+  position: relative;
+}
+.location-inner {
+  position: relative;
+  max-width: 450px;
+  margin-top: -400px;
+  margin-left: 55%;
+}
+.location-txt {
+  position: relative;
+}
+.location .txt-stitle {
+  position: relative;
+  font-size: 1rem;
+  color: #999;
+  margin-bottom: 20px;
+}
+.location .txt-stitle:before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: -120px;
+  width: 100px;
+  text-align: center;
+  height: 1px;
+  background: #ccc;
+}
+.location .txt-btitle {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+.location .txt-cont {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/*============ ADD ============ */
+.add {
+  position: relative;
+  margin: 100px 0;
+}
+.add-inner {
+  position: relative;
+  text-align: center;
+  width: 50%;
+  padding: 0 30px;
+}
+.add-title {
+  position: relative;
+  font-size: 1rem;
+  color: #999;
+  margin-bottom: 20px;
+}
+.add-line {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 20px;
+  width: 200px;
+  height: 1px;
+  background: #999;
+}
+.add-cont {
+  position: relative;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+}
+.add .xtitle {
+  width: 55%;
+}
+
+/*============ SERVICE ============ */
+.service {
+  position: relative;
+}
+.service-inner {
+  position: relative;
+  margin: 200px auto;
+  width: 80%;
+  display: flex;
+}
+.service-txt {
+  position: relative;
+  margin-left: 20%;
+  max-width: 300px;
+}
+.service .txt-stitle {
+  position: relative;
+  font-size: 1rem;
+  color: #999;
+  margin-bottom: 20px;
+}
+.service .txt-stitle:before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: -120px;
+  width: 100px;
+  text-align: center;
+  height: 1px;
+  background: #ccc;
+}
+.service .txt-btitle {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+.service .txt-cont {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+}
+.service-pic {
+  background-image: url("../images/index/bg8.jpg");
+  background-repeat: no-repeat;
+  background-position: 70%;
+  background-attachment: fixed;
+  position: relative;
+  margin-top: 120px;
+  margin-left: 10%;
+  height: 50vh;
+  width: 35%;
+}
+
+/*============ ALBUM ============ */
+.album-inner {
+  position: relative;
+  display: flex;
+  margin: 100px auto 0;
+}
+.album-memo {
+  background-image: url("../images/index/memo.jpg");
+  background-position: left;
+  background-size: cover;
+  position: relative;
+  height: 70vh;
+  width: 33.333%;
+  cursor: pointer;
+}
+.album-memo:before {
+  content: "";
+  background: #000;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.album-memo:hover {
+  background-position: left -50px;
+}
+.album-memo:hover:before {
+  opacity: 0.8;
+}
+.album-trav {
+  background-image: url("../images/index/trav.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 70vh;
+  width: 33.333%;
+  cursor: pointer;
+}
+.album-trav:before {
+  content: "";
+  background: #000;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.album-trav:hover {
+  background-position: left -50px;
+}
+.album-trav:hover:before {
+  opacity: 0.8;
+}
+.album-futu {
+  background-image: url("../images/index/futu.jpg");
+  background-size: cover;
+  background-position: right;
+  position: relative;
+  height: 70vh;
+  width: 33.333%;
+  cursor: pointer;
+}
+.album-futu:before {
+  content: "";
+  background: #000;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.album-futu:hover {
+  background-position: left -50px;
+}
+.album-futu:hover:before {
+  opacity: 0.8;
+}
+.album .title {
+  position: relative;
+  font-size: 5vw;
+  text-align: center;
+  color: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*============ CONTACT ============ */
+.contact {
+  position: relative;
+}
+.contact-inner {
+  position: relative;
+  margin: 200px auto 0;
+  overflow: hidden;
+}
+.contact-pic {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  background-size: contain;
+  margin-left: 5%;
+  width: 45%;
+  z-index: 2;
+}
+.contact-txt {
+  position: relative;
+  float: left;
+  z-index: 2;
+  margin-top: 25vw;
+  margin-left: 5%;
+  color: #fff;
+  width: 45%;
+}
+.contact-txt .title {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+.contact-txt .cont {
+  color: #ccc;
+  line-height: 1.7;
+}
+.contact-black {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background: #000;
+  margin-top: 250px;
+  z-index: 1;
+}
+
+/*============ PHOTO ============ */
+.photo-a {
+  position: relative;
+  background-image: url("../images/index/bg3.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-attachment: fixed;
+  height: 50vh;
+  margin-top: 200px;
+  margin-left: 40%;
+}
+.photo-b {
+  position: relative;
+  background-image: url("../images/index/bg4.jpg");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-attachment: fixed;
+  height: 80vh;
+  width: 30%;
+  margin-top: -200px;
+}
+.photo-c {
+  position: relative;
+  background-image: url("../images/index/bg5.jpg");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-attachment: fixed;
+  background-size: 50%;
+  width: 50%;
+  height: 80vh;
+  margin: 300px 0 200px;
+}
+.photo-d {
+  position: relative;
+  background-image: url("../images/index/bg6.jpg");
+  background-repeat: no-repeat;
+  background-position: 90%;
+  background-size: 30%;
+  background-attachment: fixed;
+  width: 40%;
+  height: 50vh;
+  margin: -850px 0 300px 60%;
+}
+.photo-e {
+  position: relative;
+  background-image: url("../images/index/bg7.jpg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 40vh;
+}
+.photo-f {
+  position: relative;
+  background-image: url("../images/index/bg9.jpg");
+  background-repeat: no-repeat;
+  background-position: 20% center;
+  background-attachment: fixed;
+  height: 60vh;
+  width: 45%;
+  background-size: 50%;
+  margin-bottom: 100px;
+}
+.photo-g {
+  position: relative;
+  background-image: url("../images/index/bg10.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-attachment: fixed;
+  height: 60vh;
+  background-size: 40%;
+  margin-top: -660px;
+}
+
+/*------------------------------------------
+ *             tablet 、 Mobile
+ *------------------------------------------ */
+@media only screen and (max-width: 1200px) {
+  .top-pic {
+    background-position: right -60px;
+  }
+
+  .top-txt {
+    left: 10vh;
+    top: 60vh;
+  }
+  .top-txt .back {
+    margin-left: 75px;
+  }
+  .top-txt .small {
+    font-size: 3vw;
+    margin-top: -13%;
+    margin-left: 110%;
+  }
+
+  .about-inner {
+    padding-top: 80px;
+    margin: 100px auto 0;
+  }
+
+  .location-inner {
+    margin-top: -250px;
+    margin-left: 55%;
+  }
+  .location-txt {
+    padding: 0 30px;
+  }
+
+  .add {
+    margin: -50px 0 100px;
+  }
+  .add .xtitle {
+    margin-left: 12%;
+  }
+
+  .service-inner {
+    margin: 150px auto;
+  }
+  .service-pic {
+    height: 40vh;
+    margin-top: 180px;
+    background-size: 50%;
+    background-position: right center;
+  }
+  .service-txt {
+    margin-left: 15%;
+  }
+  .service .txt-cont {
+    max-width: 300px;
+  }
+
+  .album-memo, .album-trav, .album-futu {
+    height: 50vh;
+  }
+
+  .contact-inner {
+    margin: 150px auto 0;
+  }
+
+  .photo-a {
+    margin-top: 150px;
+    margin-left: 50%;
+    height: 40vh;
+    background-position: center bottom;
+  }
+  .photo-b {
+    width: 35%;
+    height: 60vh;
+    margin-top: -150px;
+  }
+  .photo-c {
+    margin: 150px 0 125px;
+    height: 50vh;
+    width: 60%;
+    background-size: 60%;
+    background-position: left center;
+  }
+  .photo-d {
+    background-position: right;
+    background-size: 35%;
+    height: 40vh;
+    margin: -555px 0 200px 60%;
+  }
+  .photo-f {
+    background-position: 15% center;
+    background-size: 45%;
+    width: 45%;
+    height: 60vh;
+  }
+  .photo-g {
+    height: 48vh;
+    margin: -550px 0 150px;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .top-pic {
+    height: 80vh;
+  }
+  .top-txt {
+    top: 60vh;
+  }
+  .top-txt span {
+    font-size: 10vw;
+  }
+  .top-txt .small {
+    font-size: 4vw;
+  }
+
+  .about-pic {
+    background-size: 50%;
+    background-position: left 10%;
+    height: 40vh;
+  }
+  .about .txt-btitle {
+    font-size: 3rem;
+  }
+  .about .txt-cont {
+    font-size: 1rem;
+  }
+
+  .location-inner {
+    margin-top: -100px;
+  }
+  .location .txt-btitle {
+    font-size: 3rem;
+  }
+  .location .txt-cont {
+    font-size: 1rem;
+  }
+
+  .service-pic {
+    margin-top: 100px;
+    margin-left: 5%;
+    background-position: right center;
+  }
+  .service .txt-btitle {
+    font-size: 3rem;
+  }
+  .service .txt-cont {
+    font-size: 1rem;
+  }
+
+  .album-memo, .album-trav, .album-futu {
+    height: 45vh;
+  }
+
+  .contact-pic {
+    height: 60vh;
+  }
+  .contact-txt {
+    margin-top: 35vw;
+  }
+
+  .photo-a {
+    margin-top: 100px;
+  }
+  .photo-b {
+    height: 40vh;
+    background-size: 50%;
+    background-position: left bottom;
+  }
+  .photo-c {
+    margin: 100px 0 125px;
+    background-position: left 40%;
+  }
+  .photo-d {
+    margin: -535px 0 200px 60%;
+  }
+  .photo-g {
+    background-size: 45%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .top-pic {
+    height: 50vh;
+    background-position: right -215px;
+  }
+  .top-white {
+    display: none;
+  }
+  .top-txt {
+    position: relative;
+    top: 0;
+    left: 5%;
+    margin-top: 40px;
+  }
+  .top-txt span {
+    font-size: 4rem;
+    width: auto;
+  }
+  .top-txt .small {
+    font-size: 2rem;
+    margin-left: 245px;
+    margin-top: -6%;
+  }
+
+  .about-inner {
+    padding-top: 0;
+    margin: 100px auto;
+  }
+  .about-pic {
+    display: none;
+  }
+
+  .location-inner {
+    margin: 100px auto;
+  }
+
+  .add {
+    margin: 100px 5%;
+  }
+  .add-inner {
+    margin: auto;
+    width: auto;
+    max-width: none;
+  }
+  .add .xtitle {
+    margin: auto;
+    width: auto;
+  }
+
+  .service-pic {
+    display: none;
+  }
+  .service-txt {
+    max-width: none;
+  }
+  .service .txt-cont {
+    max-width: none;
+  }
+
+  .photo-a {
+    margin-left: 0%;
+    margin-top: 0;
+  }
+  .photo-b, .photo-d, .photo-g {
+    display: none;
+  }
+  .photo-c {
+    margin: 0;
+    width: auto;
+    background-size: 100%;
+  }
+  .photo-f {
+    width: auto;
+    height: 350px;
+    background-size: 100%;
+  }
+
+  .contact-inner {
+    margin: 100px auto 0;
+  }
+  .contact-txt {
+    margin: -105px 0 0 55%;
+  }
+  .contact-txt .cont {
+    padding-right: 10%;
+  }
+  .contact-pic {
+    height: 30vh;
+    width: 40%;
+  }
+  .contact-pic img {
+    width: 100%;
+    height: 100%;
+  }
+  .contact-black {
+    margin-top: 120px;
+    height: 45vh;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .top-pic {
+    height: 50vh;
+    background-position: 80% -150px;
+  }
+  .top-txt {
+    margin-right: 5%;
+  }
+  .top-txt span {
+    display: inline-block;
+    font-size: 3rem;
+  }
+  .top-txt .back {
+    margin-left: 1rem;
+  }
+  .top-txt .small {
+    font-size: 1.5rem;
+    margin: 15px 15px 0 0;
+  }
+
+  .about-inner {
+    margin: 100px 0;
+    width: auto;
+  }
+  .about-txt {
+    margin: 0;
+    padding: 0 5%;
+  }
+  .about .txt-stitle:before {
+    display: none;
+  }
+  .about .txt-btitle {
+    font-size: 2.5rem;
+  }
+
+  .location-txt {
+    padding: 0 5%;
+  }
+  .location .txt-stitle:before {
+    display: none;
+  }
+  .location .txt-btitle {
+    font-size: 2.5rem;
+  }
+
+  .service-inner {
+    margin: 100px 0;
+    width: auto;
+  }
+  .service-txt {
+    margin: 0;
+    padding: 0 5%;
+  }
+  .service .txt-stitle:before {
+    display: none;
+  }
+  .service .txt-btitle {
+    font-size: 2.5rem;
+  }
+
+  .album-inner {
+    display: block;
+  }
+  .album-memo, .album-trav, .album-futu {
+    width: 100%;
+    height: 25vh;
+  }
+
+  .contact .title {
+    font-size: 2.5rem;
+  }
+  .contact-inner {
+    margin: 0 auto;
+    background-color: #000;
+  }
+  .contact-txt {
+    margin: 50px 5%;
+    width: auto;
+  }
+  .contact-pic {
+    display: none;
+  }
+  .contact-black {
+    margin-top: 0;
+    height: 270px;
+  }
+}
